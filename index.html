@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>詳細はこちら</title>
+
+  <!-- X用（固定画像） -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="詳細はこちら">
+  <meta property="og:description" content="タップでページを開きます">
+  <meta property="og:image" content="https://x-card2.vercel.app/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body style="margin:0; padding:20px; text-align:center; font-family:sans-serif;">
+
+  <h2>👇 画像をタップしてください</h2>
+
+  <a id="link" href="#">
+    <img id="img" style="width:100%; max-width:600px;">
+  </a>
+
+  <script>
+    const p = new URLSearchParams(location.search);
+    document.getElementById("img").src = p.get("image");
+    document.getElementById("link").href = p.get("link");
+  </script>
+
+</body>
+</html>
